@@ -11,7 +11,7 @@ export class CurrencyConverterService {
   private readonly baseUrl =
     'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?';
   private exchangeRateApiUrl: string;
-  private readonly authKey = 'wfnYQKv8eQIlGH1U7OI1uJiFYQRtDfE9';
+  private readonly authKey = this.configService.get<string>("AUTHKEY");
 
   constructor(
     @InjectRepository(ExRateEntity)
